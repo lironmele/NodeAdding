@@ -17,7 +17,10 @@ namespace NodeAdding
         }
         static void Insert (Node<int> p, int value)
         {
-            throw new NotImplementedException();
+            while (p.GetNext() != null)
+                p = p.GetNext();
+
+            p.SetNext(new Node<int>(value));
         }
         static void InsertAt (Node<int> head, int value, int place)
         {
